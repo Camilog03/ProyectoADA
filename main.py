@@ -10,10 +10,10 @@
 
 from lista_rangos import ListaRangos, ordenar_lista_rangos, buscar_primer_rango_que_llega
 from rango import Rango
+from consultas import sum_rango, frequency, max_range, min_range, decompress
 
 # Persona 2 y 3 importan sus funciones aquí cuando estén listas: descomentar
-# from consultas      import sum_rango, frequency, max_range, min_range
-# from modificaciones import update, merge, count_ranges, decompress
+# from modificaciones import update, merge, count_ranges
 
 
 # =============================================================================
@@ -166,14 +166,9 @@ def _dos_enteros(partes):
 # =============================================================================
 # STUBS TEMPORALES — reemplazar cuando P2 y P3 entreguen sus archivos
 # =============================================================================
-def sum_rango(lista, ini, fin):      return "PENDIENTE_P2"
-def frequency(lista, val):           return "PENDIENTE_P2"
-def max_range(lista, ini, fin):      return "PENDIENTE_P2"
-def min_range(lista, ini, fin):      return "PENDIENTE_P2"
 def update(lista, ini, fin, val):    pass
 def merge(lista):                    pass
 def count_ranges(lista):             return "PENDIENTE_P3"
-def decompress(lista, ini, fin):     return []
 # =============================================================================
 
 
