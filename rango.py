@@ -3,8 +3,6 @@
 # Proyecto ADA I — Problema 4: Motor de consultas sobre datos comprimidos
 # Universidad del Valle Sede Tuluá
 # =============================================================================
-# Persona 1
-# =============================================================================
 
 
 class Rango:

@@ -3,10 +3,6 @@
 # Proyecto ADA I — Problema 4: Motor de consultas sobre datos comprimidos
 # Universidad del Valle Sede Tuluá
 # =============================================================================
-# Persona 1: leer_entrada, value, procesar_y_escribir, punto de entrada
-# Persona 2: sum_rango, frequency, max_range, min_range  ← en consultas.py
-# Persona 3: update, merge, count_ranges, decompress     ← en modificaciones.py
-# =============================================================================
 
 from lista_rangos import ListaRangos, ordenar_lista_rangos, buscar_primer_rango_que_llega
 from rango import Rango
@@ -161,7 +157,6 @@ def _dos_enteros(partes):
 # PROCESADOR CENTRAL Y ESCRITURA DE SALIDA
 # =============================================================================
 
-# COUNT_RANGES y MERGE usan directamente la ListaRangos (Persona A)
 def count_ranges(lista):
     return lista.tamaño()
  
@@ -206,7 +201,7 @@ def procesar_y_escribir(lista, operaciones, nombre_salida):
                 _escribir(salida, f"VALUE {pos} = {res if res is not None else 'NONE'}")
 
             # ----------------------------------------------------------------
-            # SUM — Persona 2
+            # SUM 
             # ----------------------------------------------------------------
             elif comando == "SUM":
                 ini, fin = _dos_enteros(partes)
@@ -214,7 +209,7 @@ def procesar_y_escribir(lista, operaciones, nombre_salida):
                 _escribir(salida, f"SUM {ini} {fin} = {res}")
 
             # ----------------------------------------------------------------
-            # FREQUENCY — Persona 2
+            # FREQUENCY 
             # ----------------------------------------------------------------
             elif comando == "FREQUENCY":
                 val = int(partes[1])
@@ -222,7 +217,7 @@ def procesar_y_escribir(lista, operaciones, nombre_salida):
                 _escribir(salida, f"FREQUENCY {val} = {res}")
 
             # ----------------------------------------------------------------
-            # MAX_RANGE — Persona 2
+            # MAX_RANGE 
             # ----------------------------------------------------------------
             elif comando == "MAX_RANGE":
                 ini, fin = _dos_enteros(partes)
@@ -230,7 +225,7 @@ def procesar_y_escribir(lista, operaciones, nombre_salida):
                 _escribir(salida, f"MAX_RANGE {ini} {fin} = {res}")
 
             # ----------------------------------------------------------------
-            # MIN_RANGE — Persona 2
+            # MIN_RANGE 
             # ----------------------------------------------------------------
             elif comando == "MIN_RANGE":
                 ini, fin = _dos_enteros(partes)
@@ -238,7 +233,7 @@ def procesar_y_escribir(lista, operaciones, nombre_salida):
                 _escribir(salida, f"MIN_RANGE {ini} {fin} = {res}")
 
             # ----------------------------------------------------------------
-            # UPDATE — Persona 3
+            # UPDATE 
             # ----------------------------------------------------------------
             elif comando == "UPDATE":
                 ini, fin = _dos_enteros(partes)
@@ -247,21 +242,21 @@ def procesar_y_escribir(lista, operaciones, nombre_salida):
                 _escribir(salida, f"UPDATE {ini} {fin} {val} = OK")
 
             # ----------------------------------------------------------------
-            # MERGE — Persona 3
+            # MERGE 
             # ----------------------------------------------------------------
             elif comando == "MERGE":
                 merge(lista)
                 _escribir(salida, "MERGE = OK")
 
             # ----------------------------------------------------------------
-            # COUNT_RANGES — Persona 3
+            # COUNT_RANGES 
             # ----------------------------------------------------------------
             elif comando == "COUNT_RANGES":
                 res = count_ranges(lista)
                 _escribir(salida, f"COUNT_RANGES = {res}")
 
             # ----------------------------------------------------------------
-            # DECOMPRESS — Persona 3
+            # DECOMPRESS
             # ----------------------------------------------------------------
             elif comando == "DECOMPRESS":
                 ini, fin = _dos_enteros(partes)

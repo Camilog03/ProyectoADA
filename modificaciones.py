@@ -3,8 +3,6 @@
 # Proyecto ADA I — Problema 4: Motor de consultas sobre datos comprimidos
 # Universidad del Valle Sede Tuluá
 # =============================================================================
-# Persona C: update
-# =============================================================================
 #
 # ESTRATEGIA GENERAL DE UPDATE
 # ─────────────────────────────────────────────────────────────────────────────
