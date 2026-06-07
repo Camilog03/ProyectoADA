@@ -11,9 +11,7 @@
 from lista_rangos import ListaRangos, ordenar_lista_rangos, buscar_primer_rango_que_llega
 from rango import Rango
 from consultas import sum_rango, frequency, max_range, min_range, decompress
-
-# Persona 2 y 3 importan sus funciones aquí cuando estén listas: descomentar
-# from modificaciones import update, merge, count_ranges
+from modificaciones import update
 
 
 # =============================================================================
@@ -163,13 +161,27 @@ def _dos_enteros(partes):
 # PROCESADOR CENTRAL Y ESCRITURA DE SALIDA
 # =============================================================================
 
-# =============================================================================
-# STUBS TEMPORALES — reemplazar cuando P2 y P3 entreguen sus archivos
-# =============================================================================
-def update(lista, ini, fin, val):    pass
-def merge(lista):                    pass
-def count_ranges(lista):             return "PENDIENTE_P3"
-# =============================================================================
+# COUNT_RANGES y MERGE usan directamente la ListaRangos (Persona A)
+def count_ranges(lista):
+    return lista.tamaño()
+ 
+def merge(lista):
+    """
+    Fusiona rangos consecutivos que tengan el mismo valor.
+    Recorre la lista una vez de izquierda a derecha.
+    Complejidad: O(R)
+    """
+    i = 0
+    while i < lista.tamaño() - 1:
+        actual    = lista.obtener(i)
+        siguiente = lista.obtener(i + 1)
+        # Si son consecutivos y tienen el mismo valor → fusionar
+        if actual.fin + 1 == siguiente.inicio and actual.valor == siguiente.valor:
+            actual.fin = siguiente.fin   # extender el rango actual
+            lista.eliminar_en(i + 1)     # eliminar el siguiente
+            # NO incrementar i: revisar de nuevo con el nuevo siguiente
+        else:
+            i += 1
 
 
 def procesar_y_escribir(lista, operaciones, nombre_salida):
